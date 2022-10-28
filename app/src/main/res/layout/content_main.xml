@@ -14,8 +14,10 @@
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/nav_graph" />
 
     <TextView
@@ -23,6 +25,6 @@
         android:layout_width="390dp"
         android:layout_height="50dp"
         android:text="Olá! Meu nome é Luan Henrique Nebbering dos Santos e consegui rodar meu app!"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="305dp" />
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="327dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
