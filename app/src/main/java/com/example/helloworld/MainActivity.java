@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +18,15 @@ import com.example.helloworld.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
+    EditText txtA;
+    EditText txtB;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -30,26 +35,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         textView = (TextView)findViewById(R.id.textView);
         System.out.println(textView.getText());
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
+        txtA = (EditText) findViewById(R.id.txtA);
+        txtB = (EditText) findViewById(R.id.txtB);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(binding.toolbar);
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG) .setAction("Action", null).show();
             }
         });
+
         float number1 = 6;
         float number2 = 4;
         Operacoes operacoes = new Operacoes(number1, number2);
@@ -57,6 +56,24 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(operacoes.subtracao());
         System.out.println(operacoes.multiplicacao());
         System.out.println(operacoes.divisao());
+
+    public void onSoma (View view) {
+        int a = Integer.parseInt(txtA.getText().toString());
+        int b = Integer.parseInt(txtA.getText().toString());
+        Operacoes operacoes = new Operacoes(a,b);
+        textView.setText(String.valueOf(operacoes.soma()));
+        }
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+
     }
 
     @Override
