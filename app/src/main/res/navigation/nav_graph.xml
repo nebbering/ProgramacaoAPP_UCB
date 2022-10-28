@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/MeuPrimeiroApp"
-        android:name="com.example.helloworld.SecondFragment"
+        android:name="com.example.helloworld.FirstFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_first">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"

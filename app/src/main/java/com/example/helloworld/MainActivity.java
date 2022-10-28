@@ -17,15 +17,22 @@ import com.example.helloworld.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView textView;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        textView = (TextView)findViewById(R.id.textView);
+        System.out.println(textView.getText());
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -43,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        float number1 = 6;
+        float number2 = 4;
+        Operacoes operacoes = new Operacoes(number1, number2);
+        System.out.println(operacoes.soma());
+        System.out.println(operacoes.subtracao());
+        System.out.println(operacoes.multiplicacao());
+        System.out.println(operacoes.divisao());
     }
 
     @Override
