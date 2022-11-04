@@ -27,25 +27,21 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     EditText txtA;
     EditText txtB;
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView = (TextView)findViewById(R.id.textView);
+        textView = (TextView) findViewById(R.id.textView);
         System.out.println(textView.getText());
         txtA = (EditText) findViewById(R.id.txtA);
         txtB = (EditText) findViewById(R.id.txtB);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(binding.toolbar);
+        setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG) .setAction("Action", null).show();
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 
@@ -56,52 +52,27 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(operacoes.subtracao());
         System.out.println(operacoes.multiplicacao());
         System.out.println(operacoes.divisao());
-
-    public void onSoma (View view) {
-        int a = Integer.parseInt(txtA.getText().toString());
-        int b = Integer.parseInt(txtA.getText().toString());
-        Operacoes operacoes = new Operacoes(a,b);
-        textView.setText(String.valueOf(operacoes.soma()));
+        public void onSoma (View view){
+            int a = Integer.parseInt(txtA.getText().toString());
+            int b = Integer.parseInt(txtB.getText().toString());
+            Operacoes operacoes = new Operacoes(a, b);
+            textView.setText(String.valueOf(operacoes.soma()));
         }
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        @Override
+        public boolean onCreateOptionsMenu (Menu menu){
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.menu_main, menu);
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
+        @Override
+        public boolean onOptionsItemSelected (MenuItem item){
+            int id = item.getItemId();
+            //noinspection SimplifiableIfStatement
+            if (id == R.id.action_settings) {
+                return true;
+            }
+            return super.onOptionsItemSelected(item);
+        }
     }
 }
