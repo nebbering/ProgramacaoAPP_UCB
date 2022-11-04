@@ -30,4 +30,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public void somarValores(View view) {
+
+        EditText edValor1 = (EditText) findViewById(R.id.valor1);
+        EditText edValor2 = (EditText) findViewById(R.id.valor2);
+
+        double valor1 = Double.parseDouble(edValor1.getText().toString());
+        double valor2 = Double.parseDouble(edValor2.getText().toString());
+        double resultado = valor1 + valor2;
+
+        TextView txtResultado = (TextView) findViewById(R.id.resultado);
+        txtResultado.setText("O valor da sima é = " + resultado);
+    }
 }
