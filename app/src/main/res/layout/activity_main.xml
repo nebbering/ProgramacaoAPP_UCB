@@ -8,41 +8,39 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Valor 1:" />
+        android:text="Produto:" />
 
     <EditText
-        android:id="@+id/valor1"
+        android:id="@+id/nomeproduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Informe o nome do produto"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Valor 2:" />
+        android:text="Preço:" />
 
     <EditText
-        android:id="@+id/valor2"
+        android:id="@+id/precoproduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Informe o preço do produto"
         android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="somarValores"
-        android:text="SOMAR" />
-
-    <TextView
-        android:id="@+id/resultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_centerHorizontal="true"
+        android:onClick="salvarInfo"
+        android:text="Salvar" />
 
 </LinearLayout>

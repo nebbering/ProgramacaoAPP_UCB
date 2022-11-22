@@ -2,25 +2,12 @@ package com.example.helloworld;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.helloworld.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toolbar;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,16 +18,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void somarValores(View view) {
+    public void salvarInfo(View view) {
 
-        EditText edValor1 = (EditText) findViewById(R.id.valor1);
-        EditText edValor2 = (EditText) findViewById(R.id.valor2);
+        Toast toast = Toast.makeText(this, "TESTANDO TOAST", Toast.LENGTH_SHORT);
+        toast.show();
 
-        double valor1 = Double.parseDouble(edValor1.getText().toString());
-        double valor2 = Double.parseDouble(edValor2.getText().toString());
-        double resultado = valor1 + valor2;
+        EditText Nomeproduto = (EditText) findViewById(R.id.nomeproduto);
+        EditText Precoproduto = (EditText) findViewById(R.id.precoproduto);
 
-        TextView txtResultado = (TextView) findViewById(R.id.resultado);
-        txtResultado.setText("O valor da sima é = " + resultado);
+
     }
 }
