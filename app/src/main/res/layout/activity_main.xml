@@ -35,6 +35,13 @@
         android:hint="Informe o preço do produto"
         android:inputType="textPersonName" />
 
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Produto Importado"
+        android:onClick="onCheckBoxClicked" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
