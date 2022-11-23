@@ -28,11 +28,18 @@ public class MainActivity extends AppCompatActivity {
         EditText Nomeproduto = (EditText) findViewById(R.id.nomeproduto);
         EditText Precoproduto = (EditText) findViewById(R.id.precoproduto);
 
+        String nomep = Nomeproduto.getText().toString();
+        String precop = Precoproduto.getText().toString();
+
         if (Nomeproduto.getText().length() == 0 || Precoproduto.getText().length() == 0 ) {
             Toast toast = Toast.makeText(this, "Informe os campos obrigatórios!", Toast.LENGTH_SHORT);
             toast.show();
         } else {
-            Toast toast = Toast.makeText(this, "Dados informados: \n ", Toast.LENGTH_LONG);
+            StringBuilder sb = new StringBuilder();
+            sb +=  System.lineSeparator() + ""
+            sb.append(nomep + "\n");
+            sb.append(precop +"\n");
+            Toast toast = Toast.makeText(this, "Dados informados: \n" + nomep + "\n" + precop, Toast.LENGTH_LONG);
             toast.show();
         }
 
