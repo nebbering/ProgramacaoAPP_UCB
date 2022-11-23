@@ -23,19 +23,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClick(View view) {
+    public void salvarInfo(View view) {
 
         EditText Nomeproduto = (EditText) findViewById(R.id.nomeproduto);
         EditText Precoproduto = (EditText) findViewById(R.id.precoproduto);
 
-        if ( Nomeproduto.getText().length() == 0 ) {
-            Toast toast = Toast.makeText(this, "Informe o nome do produto", Toast.LENGTH_SHORT);
-            toast.show();
-        } else if (Precoproduto.getText().length() == 0) {
-            Toast toast = Toast.makeText(this, "Informe o preço do produto", Toast.LENGTH_SHORT);
+        if (Nomeproduto.getText().length() == 0 || Precoproduto.getText().length() == 0 ) {
+            Toast toast = Toast.makeText(this, "Informe os campos obrigatórios!", Toast.LENGTH_LONG);
             toast.show();
         } else {
-            Toast toast = Toast.makeText(this, "Dados informados: \n Nome do produto: \n Preço do produto: \n Produto importado: ", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Dados informados: \n "Nomeproduto" \n Preço do produto: \n Produto importado: ", Toast.LENGTH_SHORT);
             toast.show();
         }
 
