@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         EditText Precoproduto = (EditText) findViewById(R.id.precoproduto);
 
         if (Nomeproduto.getText().length() == 0 || Precoproduto.getText().length() == 0 ) {
-            Toast toast = Toast.makeText(this, "Informe os campos obrigatórios!", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "Informe os campos obrigatórios!", Toast.LENGTH_SHORT);
             toast.show();
         } else {
-            Toast toast = Toast.makeText(this, "Dados informados: \n "Nomeproduto" \n Preço do produto: \n Produto importado: ", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, "Dados informados: \n ", Toast.LENGTH_LONG);
             toast.show();
         }
 
